@@ -80,7 +80,7 @@
 #         max_idx = i+1
 #
 # print('{}\n{}'.format(max_num, max_idx))
-
+#
 # # 2577 숫자의 개수
 # # 문자열로 푸는 것이 더 쉬워보여 곱셈의 결과를 문자열로 치환해 풀었다.
 #
@@ -101,9 +101,9 @@
 #         print(numbers[i], end='')
 #         break
 #     print(numbers[i])
-
-# 3052 나머지
-
+#
+# # 3052 나머지
+#
 # arr = set()
 # for i in range(10):
 #     n = int(input()) % 42
@@ -111,10 +111,10 @@
 #
 # # 중복을 허용하지 않는 set을 만들어서, set의 length만 나중에 세주기.
 # print(len(arr), end='')
-
-# List만 쓴다면 위의 문제처럼 배열을 만들어서 할 수 있는데,
-# 숫자를 카운트 하기 위한 배열이 42개이므로 메모리 차지 많음.
-
+#
+# # List만 쓴다면 위의 문제처럼 배열을 만들어서 할 수 있는데,
+# # 숫자를 카운트 하기 위한 배열이 42개이므로 메모리 차지 많음.
+#
 # arr = []
 # numbers = [0 for _ in range(42)]
 #
@@ -124,4 +124,52 @@
 #         numbers[n] += 1
 #
 # print(sum(numbers), end='')
+#
+# # 1546 평균
+# N = int(input())
+# arr = list(map(int, input().split()))
+#
+# sum = 0
+# max_num = max(arr)
+#
+# for n in arr:
+#     sum += (n / max_num * 100)
+#
+# print(sum / N)
+#
+# # 8958 OX 퀴즈
+# # O가 연속된 수가 많을수록 점수가 높아져 더해진다.
+# # O를 카운트하는 수를 만들어 점수로 더해주고, X를 만나면 0으로 초기화 시키자!
+# import sys
+# T = int(input())
+#
+# for tc in range(1, T+1):
+#     cnt = score = 0
+#     arr = sys.stdin.readline().rstrip()
+#     for ch in arr:
+#         if ch == 'O':
+#             cnt += 1
+#             score += cnt
+#         else:
+#             cnt = 0
+#     print(score)
 
+# 4344 평균은 넘겠지
+
+C = int(input())
+
+for tc in range(1, C+1):
+    # 우선 들어오는 숫자들을 리스트로 저장.
+    arr = list(map(int, input().split()))
+    # 두 번째 인덱스부터 끝까지 더한 수를 사람수(arr[0])으로 나눠준다.
+    avg = sum(arr[1:]) / arr[0]
+
+    # arr 안에 있는 수 중 평균보다 높은 수를 세서 사람 수로 나눈 후 * 100을 해준다.
+    # 소수점 셋째 자리까지 나타내야 하므로, .format의 변수가 들어갈 자리에 :.3f 이렇게 표기해준다.
+    # round(수, 3) 이렇게 하면 40.000% 처럼 끝이 0인 애는 자동으로 없애서 40.0%으로만 나온다.
+    cnt = 0
+    for i in range(1, len(arr)):
+        if arr[i] > avg:
+            cnt += 1
+
+    print('{:.3f}%'.format((cnt / arr[0]) * 100))
