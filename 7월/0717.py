@@ -188,3 +188,30 @@
 #     print('?')
 # else:
 #     print(chr(max_idx + 65))
+
+# # 1152 단어의 개수
+# word = list(input().split())
+# print(len(word))
+
+# # 2908 상수
+# # 두 수를 입력받으면 거꾸로 읽은 후 크기가 큰 쪽을 답하는 상수의 대답을 출력해보자!
+# # 파이썬 내장함수를 사용해서 문자열로 바꿔서 풀 수 있지만, 이번엔 10으로 나눠줘서 자리수를 구하고, 구한 자리수에 다시 10을 곱해 바꿔보려 한다.
+#
+# def reverse(n):
+#     reversed_num = 0
+#     for i in range(2, -1, -1):
+#         reversed_num += (n % 10) * (10 ** i)
+#         n = n // 10
+#
+#     return reversed_num
+#
+# A, B = map(int, input().split())
+# A = reverse(A)
+# B = reverse(B)
+#
+# if A >= B:
+#     print(A)
+# else:
+#     print(B)
+
+# 5622 다이얼
