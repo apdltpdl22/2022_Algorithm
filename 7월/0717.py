@@ -189,9 +189,11 @@
 # else:
 #     print(chr(max_idx + 65))
 
+
 # # 1152 단어의 개수
 # word = list(input().split())
 # print(len(word))
+
 
 # # 2908 상수
 # # 두 수를 입력받으면 거꾸로 읽은 후 크기가 큰 쪽을 답하는 상수의 대답을 출력해보자!
@@ -214,4 +216,30 @@
 # else:
 #     print(B)
 
+
 # 5622 다이얼
+# 문자를 다이얼에 해당하는 숫자로 변경하고, 숫자+1(1을 입력할 때 2초이므로)를 더해주면 되는 문제.
+# 어렵게 풀면 너무 힘들 것 같아서 가장 쉬운 방법으로 풀어보았다.
+
+word = input()
+sum = 0
+
+for w in word:
+    if w in ['A', 'B', 'C']:
+        sum += 3
+    elif w in ['D', 'E', 'F']:
+        sum += 4
+    elif w in ['G', 'H', 'I']:
+        sum += 5
+    elif w in ['J', 'K', 'L']:
+        sum += 6
+    elif w in ['M', 'N', 'O']:
+        sum += 7
+    elif w in ['P', 'Q', 'R', 'S']:
+        sum += 8
+    elif w in ['T', 'U', 'V']:
+        sum += 9
+    elif w in ['W', 'X', 'Y', 'Z']:
+        sum += 10
+
+print(sum)
