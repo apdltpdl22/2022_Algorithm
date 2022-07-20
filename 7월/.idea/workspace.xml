@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad02ea57-934c-456b-bc57-2f98513a1ce1" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/0719.py" afterDir="false" />
+=======
+>>>>>>> fe2efae5ff7a1053c216055b152eaba2ecb70be4
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/0717.py" beforeDir="false" afterPath="$PROJECT_DIR$/0717.py" afterDir="false" />
     </list>
@@ -16,6 +19,7 @@
     <session id="-916624211">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+<<<<<<< HEAD
           <entry key="project.closed" value="13" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.10" value="1" />
@@ -23,6 +27,15 @@
           <entry key="project.open.time.3" value="8" />
           <entry key="project.open.time.4" value="2" />
           <entry key="project.opened" value="15" />
+=======
+          <entry key="project.closed" value="12" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.10" value="1" />
+          <entry key="project.open.time.2" value="3" />
+          <entry key="project.open.time.3" value="7" />
+          <entry key="project.open.time.4" value="2" />
+          <entry key="project.opened" value="14" />
+>>>>>>> fe2efae5ff7a1053c216055b152eaba2ecb70be4
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -37,12 +50,20 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
+<<<<<<< HEAD
           <entry key="py" value="18934" />
+=======
+          <entry key="py" value="15155" />
+>>>>>>> fe2efae5ff7a1053c216055b152eaba2ecb70be4
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
+<<<<<<< HEAD
           <entry key="Python" value="18934" />
+=======
+          <entry key="Python" value="15155" />
+>>>>>>> fe2efae5ff7a1053c216055b152eaba2ecb70be4
         </counts>
       </usages-collector>
     </session>
@@ -88,6 +109,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/0717.py">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="792">
               <caret line="307" column="12" selection-start-line="307" selection-start-column="12" selection-end-line="307" selection-end-column="12" />
               <folding>
@@ -105,6 +127,10 @@
               <folding>
                 <marker date="1658329805791" expanded="true" signature="1863:2063" ph="..." />
               </folding>
+=======
+            <state relative-caret-position="390">
+              <caret line="269" column="19" selection-start-line="269" selection-start-column="19" selection-end-line="269" selection-end-column="19" />
+>>>>>>> fe2efae5ff7a1053c216055b152eaba2ecb70be4
             </state>
           </provider>
         </entry>
@@ -135,8 +161,13 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
+<<<<<<< HEAD
     <option name="x" value="296" />
     <option name="y" value="-19" />
+=======
+    <option name="x" value="-8" />
+    <option name="y" value="398" />
+>>>>>>> fe2efae5ff7a1053c216055b152eaba2ecb70be4
     <option name="width" value="1620" />
     <option name="height" value="870" />
   </component>
@@ -146,6 +177,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -161,7 +193,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -360,68 +391,121 @@
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+<<<<<<< HEAD
           <url>file://$PROJECT_DIR$/0719.py</url>
           <line>94</line>
           <option name="timeStamp" value="4" />
+=======
+          <url>file://$PROJECT_DIR$/0717.py</url>
+          <line>261</line>
+          <option name="timeStamp" value="6" />
+>>>>>>> fe2efae5ff7a1053c216055b152eaba2ecb70be4
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
+<<<<<<< HEAD
         <watch expression="cnt" language="Python" />
         <watch expression="start + i" language="Python" />
+=======
+        <watch expression="i" language="Python" />
+        <watch expression="word_cnt" language="Python" />
+        <watch expression="word[i:i+2]" language="Python" />
+        <watch expression="word[i:i+3]" language="Python" />
+>>>>>>> fe2efae5ff7a1053c216055b152eaba2ecb70be4
       </configuration>
     </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
       <expression>
+<<<<<<< HEAD
         <expression-string>start + i</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>cnt</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>val</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>n</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>ne</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>loss</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>profit</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>input()</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
+=======
         <expression-string>word[i:i+3]</expression-string>
+>>>>>>> fe2efae5ff7a1053c216055b152eaba2ecb70be4
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
+<<<<<<< HEAD
+        <expression-string>cnt</expression-string>
+=======
         <expression-string>word[i:i+2]</expression-string>
+>>>>>>> fe2efae5ff7a1053c216055b152eaba2ecb70be4
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+<<<<<<< HEAD
+        <expression-string>val</expression-string>
+=======
+        <expression-string>word[i]</expression-string>
+>>>>>>> fe2efae5ff7a1053c216055b152eaba2ecb70be4
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+<<<<<<< HEAD
+        <expression-string>n</expression-string>
+=======
+        <expression-string>word_cnt</expression-string>
+>>>>>>> fe2efae5ff7a1053c216055b152eaba2ecb70be4
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+<<<<<<< HEAD
+        <expression-string>ne</expression-string>
+=======
+        <expression-string>i</expression-string>
+>>>>>>> fe2efae5ff7a1053c216055b152eaba2ecb70be4
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+<<<<<<< HEAD
+        <expression-string>loss</expression-string>
+=======
+        <expression-string>reversed_num</expression-string>
+>>>>>>> fe2efae5ff7a1053c216055b152eaba2ecb70be4
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+<<<<<<< HEAD
+        <expression-string>profit</expression-string>
+=======
+        <expression-string>arr[i] - arr[i-1]</expression-string>
+>>>>>>> fe2efae5ff7a1053c216055b152eaba2ecb70be4
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+<<<<<<< HEAD
+        <expression-string>input()</expression-string>
+=======
+        <expression-string>arr</expression-string>
+>>>>>>> fe2efae5ff7a1053c216055b152eaba2ecb70be4
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+<<<<<<< HEAD
+        <expression-string>word[i:i+3]</expression-string>
+=======
+        <expression-string>n</expression-string>
+>>>>>>> fe2efae5ff7a1053c216055b152eaba2ecb70be4
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+<<<<<<< HEAD
+        <expression-string>word[i:i+2]</expression-string>
+=======
+        <expression-string>(n // (10 ** log_num))</expression-string>
+>>>>>>> fe2efae5ff7a1053c216055b152eaba2ecb70be4
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -484,6 +568,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/0717.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="792">
           <caret line="307" column="12" selection-start-line="307" selection-start-column="12" selection-end-line="307" selection-end-column="12" />
           <folding>
@@ -506,6 +591,10 @@
           <folding>
             <marker date="1658329805791" expanded="true" signature="1863:2063" ph="..." />
           </folding>
+=======
+        <state relative-caret-position="390">
+          <caret line="269" column="19" selection-start-line="269" selection-start-column="19" selection-end-line="269" selection-end-column="19" />
+>>>>>>> fe2efae5ff7a1053c216055b152eaba2ecb70be4
         </state>
       </provider>
     </entry>
