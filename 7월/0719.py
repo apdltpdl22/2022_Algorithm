@@ -67,36 +67,57 @@
 #     print(math.floor(n))
 
 
-# 2292 벌집
-# 이건 규칙성을 따져보면 쉽게 풀 수 있는데, 벌집의 숫자는 6의 배수로 늘어난다.
-# 가령 1은 6의 0제곱, 1을 둘러싼 원은 2-7(6개), 그 다음 원은 8-19(12개), 다음 원은 20-37(18개)...
-# 이걸 레벨별로 정리하면, level 1은 6의 0제곱, 2레벨은 1레벨 + 6 * 1 범위 내, 3레벨은 2레벨 6* 2의 범위 내
-# 재귀 함수로 만들어놓고 나중에 return 값으로 cnt를 받으니까 None이 떠서 왜이러지 한참 고민했다
-# 1레벨로 다시 돌아왔을 때 return 값이 없으니까!!
-
-def find_loc(start, cnt):
-    global ret_cnt
-    for i in range(1, 6 * cnt + 1):
-        if start + i == N:
-            ret_cnt = cnt
-            return
-        if i == 6 * cnt:
-            start += i
-
-    find_loc(start, cnt + 1)
-    return
-
-
-N = int(input())
-ret_cnt = 0
-if N == 1:
-    print(1)
-else:
-    find_loc(1, 1)
-    print(ret_cnt+1)
+# # 2292 벌집
+# # 이건 규칙성을 따져보면 쉽게 풀 수 있는데, 벌집의 숫자는 6의 배수로 늘어난다.
+# # 가령 1은 6의 0제곱, 1을 둘러싼 원은 2-7(6개), 그 다음 원은 8-19(12개), 다음 원은 20-37(18개)...
+# # 이걸 레벨별로 정리하면, level 1은 6의 0제곱, 2레벨은 1레벨 + 6 * 1 범위 내, 3레벨은 2레벨 6* 2의 범위 내
+# # 재귀 함수로 만들어놓고 나중에 return 값으로 cnt를 받으니까 None이 떠서 왜이러지 한참 고민했다
+# # 1레벨로 다시 돌아왔을 때 return 값이 없으니까!!
+#
+# def find_loc(start, cnt):
+#     global ret_cnt
+#     for i in range(1, 6 * cnt + 1):
+#         if start + i == N:
+#             ret_cnt = cnt
+#             return
+#         if i == 6 * cnt:
+#             start += i
+#
+#     find_loc(start, cnt + 1)
+#     return
+#
+#
+# N = int(input())
+# ret_cnt = 0
+# if N == 1:
+#     print(1)
+# else:
+#     find_loc(1, 1)
+#     print(ret_cnt+1)
 
 
 # 근데 이렇게 풀었더니 RecursionError가 나왔다.
 # RecursionError는 최대 재귀 깊이를 넘었을 때 발생하는 현상이다.
-# 그럼 한차례씩
+# 레벨의 마지막 값들이 1, 7, 19, 37...인데 이 수들은 전부 -1 하면 6*0, 6*1, 6*2...이다.
+# 즉 들어온 수 n이 6 * ? -1 이하일 때 이 ?가 뭔지만 확인하면 된다.
 
+# n = int(input())
+# i = 0
+# while (6 * i) + 1 <= n:
+#     i += 1
+#
+# print(i)
+
+# 근데 저 위에것도 시간초과가 나왔다.
+# 그래서 아래처럼 바꿨더니 드디어 통과
+# 생각해보니 위에거는 아예 식을 잘못 짰다. (6 * i) + 1이 각 층의 마지막 수가 아니라
+# 마지막 수에 계속 더해지는 식으로 짰어야 했는데.
+
+n = int(input())
+cnt = 0
+final_room_num = 1
+while n > final_room_num:
+    cnt += 1
+    final_room_num += 6 * cnt
+
+print(cnt + 1)
