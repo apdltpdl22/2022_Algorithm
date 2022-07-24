@@ -208,3 +208,32 @@
 
 # 2869 달팽이는 올라가고 싶다
 
+# A, B, V = map(int, input().split())
+#
+# H = 0
+# date = 1
+#
+# while H < V:
+#     H += A
+#     if H >= V:
+#         break
+#     H -= B
+#     date += 1
+#
+# print(date)
+# 시간 초과가 나왔다.
+import math
+A, B, V = map(int, input().split())
+
+H = 0
+date = 0
+if A >= V:
+    date = 1
+elif (A - B) >= (V - A):
+    date = 2
+else:
+    tmp = (V - A) / (A - B)
+    date = math.ceil(tmp) + 1
+
+
+print(date)
