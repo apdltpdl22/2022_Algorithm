@@ -122,36 +122,89 @@
 #
 # print(cnt + 1)
 
-# 1193 분수 찾기
-def find_num(y, x, cnt, str):
-    dy = [1, -1, 0, 1]
-    dx = [-1, 1, 1, 0]
+# # 1193 분수 찾기
+# def find_num(y, x, cnt, str):
+#     dy = [1, -1]
+#     dx = [-1, 1]
+#
+#     if cnt == N:
+#         print(arr[y][x], end='')
+#         return
+#
+#
+#     # case [0] 좌하향
+#     # case [1] 우상향
+#
+#     for i in range(2):
+#         if (y + dy[i]) + (x + dx[i]) == y + x:
+#             if y + dy[i] < 0 or x + dx[i] < 0 :continue
+#             if y + dy[i] >= 10000 or x + dx[i] >= 10000 :continue
+#             if MAP[y + dy[i]][x + dx[i]] == -1: continue
+#             MAP[y + dy[i]][x + dx[i]] = -1
+#             find_num(y + dy[i], x + dx[i], cnt + 1, str + '({},{})'.format(y + dy[i], x + dx[i]))
+#             return
+#
+#     # case [2] x + 1: 우측 이동
+#     if y == 0 and x + 1 < 10000:
+#         MAP[y][x + 1] = -1
+#         find_num(y, x + 1, cnt + 1, str + '({},{})'.format(y, x + 1))
+#         return
+#
+#     # case [3] y + 1: 아래 이동
+#     elif x == 0 and y + 1 < 10000:
+#         MAP[y + 1][x] = -1
+#         find_num(y + 1, x, cnt + 1, str + '({},{})'.format(y + 1, x))
+#         return
+#
+#     return
+#
+#
+#
+#
+# arr = [[0 for _ in range(10000)] for t in range(10000)]
+# MAP = [[0 for _ in range(10000)] for t in range(10000)]
+#
+# for y in range(10000):
+#     for x in range(10000):
+#         arr[y][x] = '{}/{}'.format(y+1, x+1)
+#
+# N = int(input())
+# cnt = 1
+# str = '(0,0)'
+# MAP[0][0] = -1
+# find_num(0, 0, cnt, str)
+#
+# # DFS로 풀었더니
+# # 시간초과 난다.
+#
+# # 그래서 다른 분들의 풀이를 찾아봤더니 완전 쉽게 푸는 방법이 있었다..!
+# # (https://hongcoding.tistory.com/33)
+# # 라인이 짝수인지/홀수인지로 방향을 결정해서 푸는 방식이었다.
+#
+# N = int(input())
+# line = 0
+# end = 0
+#
+# # line이 1일때 숫자 1개, line이 2일때 숫자 2개 이런 식으로 늘어나므로
+# while N > end:
+#     line += 1
+#     end += line
+#
+# # N = 14일 때 end(라인의 끝값) = 15가 나온다.
+# # end와 N의 차이는 1이다.
+# # end 안의 분수는 line이 짝수일 경우 'line/1'이 나올 것이고, line이 홀수일 경우 '1/line'이 나온다.
+# # line이 짝수일 때 end로 갈 수록 분자는 +1, 분모는 -1 된다.
+# # line이 홀수일 때 end로 갈 수록 분자는 -1, 분모는 +1 된다.
+#
+# diff = end - N
+# if line % 2 == 0:
+#     top = line - diff
+#     bottom = 1 + diff
+# else:
+#     top = 1 + diff
+#     bottom = line - diff
+#
+# print('{}/{}'.format(top, bottom))
 
-    if cnt == N:
-        return arr[y][x]
+# 2869 달팽이는 올라가고 싶다
 
-
-    # case [0] 좌하향
-    if (y + dy[0]) + (x + dx[0]) == y + x:
-        pass
-
-    # case [1] 우상향
-
-    # case [2] x + 1(우측 이동)
-
-    # case [3] y + 1(아래 이동)
-
-
-
-arr = [[0 for _ in range(10)] for t in range(10)] #추후 10000으로 바꾸기
-
-for y in range(10):
-    for x in range(10):
-        arr[y][x] = '{}/{}'.format(y+1, x+1)
-
-N = int(input())
-cnt = 1
-str = '(0,0)'
-MAP[0][0] = -1
-ret = find_num(0, 0, cnt, str)
-print(ret)
