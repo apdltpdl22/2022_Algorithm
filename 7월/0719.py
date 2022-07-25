@@ -206,8 +206,8 @@
 #
 # print('{}/{}'.format(top, bottom))
 
-# 2869 달팽이는 올라가고 싶다
-
+# # 2869 달팽이는 올라가고 싶다
+#
 # A, B, V = map(int, input().split())
 #
 # H = 0
@@ -221,19 +221,38 @@
 #     date += 1
 #
 # print(date)
-# 시간 초과가 나왔다.
-import math
-A, B, V = map(int, input().split())
+# # 시간 초과가 나왔다.
+# import math
+# A, B, V = map(int, input().split())
+#
+# H = 0
+# date = 0
+# if A >= V:
+#     date = 1
+# elif (A - B) >= (V - A):
+#     date = 2
+# else:
+#     tmp = (V - A) / (A - B)
+#     date = math.ceil(tmp) + 1
+#
+# print(date)
 
-H = 0
-date = 0
-if A >= V:
-    date = 1
-elif (A - B) >= (V - A):
-    date = 2
-else:
-    tmp = (V - A) / (A - B)
-    date = math.ceil(tmp) + 1
+# 10250 ACM호텔
 
+T = int(input())
 
-print(date)
+for tc in range(1, T+1):
+    H, W, N = map(int, input().split())
+    cnt = 1
+    flag = False
+
+    for w in range(1, W+1):
+        for h in range(1, H+1):
+            if cnt == N:
+                print(h*100 + w)
+                flag = True
+                break
+            else:
+                cnt += 1
+        if cnt == N and flag == True:
+            break
