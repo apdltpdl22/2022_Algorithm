@@ -237,22 +237,24 @@
 #
 # print(date)
 
-# 10250 ACM호텔
+# # 10250 ACM호텔
+#
+# T = int(input())
+#
+# for tc in range(1, T+1):
+#     H, W, N = map(int, input().split())
+#     cnt = 1
+#     flag = False
+#
+#     for w in range(1, W+1):
+#         for h in range(1, H+1):
+#             if cnt == N:
+#                 print(h*100 + w)
+#                 flag = True
+#                 break
+#             else:
+#                 cnt += 1
+#         if cnt == N and flag == True:
+#             break
 
-T = int(input())
-
-for tc in range(1, T+1):
-    H, W, N = map(int, input().split())
-    cnt = 1
-    flag = False
-
-    for w in range(1, W+1):
-        for h in range(1, H+1):
-            if cnt == N:
-                print(h*100 + w)
-                flag = True
-                break
-            else:
-                cnt += 1
-        if cnt == N and flag == True:
-            break
+# 2775 부녀회장이 될테야
