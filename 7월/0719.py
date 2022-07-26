@@ -258,3 +258,6 @@
 #             break
 
 # 2775 부녀회장이 될테야
+T = int(input())
+for tc in range(1, T+1):
+    pass
