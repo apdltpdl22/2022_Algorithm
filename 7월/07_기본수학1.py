@@ -257,7 +257,57 @@
 #         if cnt == N and flag == True:
 #             break
 
-# 2775 부녀회장이 될테야
-T = int(input())
-for tc in range(1, T+1):
-    pass
+# # 2775 부녀회장이 될테야
+# # 이 문제는 n과 k가 1부터 14 사이의 작은 수여서
+# # O(n제곱)의 시간복잡도가 나오더라도 이중 반복문을 사용해 풀었다.
+#
+# T = int(input())
+#
+# for tc in range(1, T+1):
+#     k = int(input())
+#     n = int(input())
+#
+#     house = [[0 for _ in range(n+1)] for z in range(k+1)]
+#
+#     # 0층의 room들은 1, 2, 3 순으로 사람이 들어가 있다.
+#     for r in range(n+1):
+#         house[0][r] = r
+#
+#     # k층 n호실에 사는 사람 수 = k-1층 1호실~n호실까지의 사람 수이므로
+#     # 이중 반복문을 이용한다.
+#     for floor in range(1, k+1):
+#         for room in range(1, n+1):
+#             house[floor][room] = sum(house[floor-1][0:room+1])
+#
+#     print(house[k][n])
+
+# # 2839 설탕 배달
+# N = int(input())
+# min_num = 10000
+#
+# # 나누어 떨어지는 경우
+# if N % 3 == 0 and N / 3 < min_num:
+#     min_num = int(N / 3)
+#
+# if N % 5 == 0 and N / 5 < min_num:
+#     min_num = int(N / 5)
+#
+# # 나누어 안 떨어지는데 나머지가 다른 수의 배수일 경우.
+# for i in range(1, int(N/5)):
+#     ret = N - (5 * i)
+#     if ret % 3 == 0 and i + int(ret / 3) < min_num:
+#         min_num = i + int(ret / 3)
+#
+# for z in range(1, int(N/3)):
+#     ret = N - (3 * z)
+#     if ret % 5 == 0 and z + int(ret / 5) < min_num:
+#         min_num = z + int(ret / 5)
+#
+# if min_num == 10000:
+#     min_num = -1
+#
+# print(min_num)
+
+# 10757 큰 수 A+B
+A, B = map(int, input().split())
+print(A+B)
