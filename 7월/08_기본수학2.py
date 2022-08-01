@@ -272,3 +272,21 @@ for tc in range(1, T+1):
     N = int(sys.stdin.readline())
     arr = GoldBach(N)
     print('{} {}'.format(arr[0], arr[1]))
+
+
+# 빠른 EratosThenes.
+# def Eratosthenes(n):
+#   high=int(n**0.5)
+#   isPrime=[1 for i in range(n+1)]
+#   isPrime[0]=0
+#   isPrime[1]=0
+#   for i in range(2, high):
+#     if isPrime[i]==1:
+#       for j in range(i**2, n+1, i):
+#         if isPrime[j]==1:
+#           isPrime[j]=0
+#   for i in range(n+1):
+#     if isPrime[i]==1:
+#       print(i)
+#
+# Eratosthenes(n)
