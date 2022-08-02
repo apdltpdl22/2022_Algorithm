@@ -89,8 +89,23 @@
 #             print(' ', end='')
 #     print()
 
-# 11729 하노이탑
+# 11729 하노이탑 924ms
+# https://mgyo.tistory.com/185 참고
 # Hanoi(n)은 H(n-1) * 2 (마지막 원반 옮기기 전, 후) + 1(마지막 원반 옮기기) 인 재귀식이다!
 
+MSG_FORMAT = '{} {}'
+def Move(start, end):
+    print(MSG_FORMAT.format(start, end))
+
 def Hanoi(N, start, end, sub):
-    pass
+    if N == 1:
+        Move(start, end)
+        return
+    else:
+        Hanoi(N-1, start, sub, end)
+        Move(start, end)
+        Hanoi(N-1, sub, end, start)
+
+N = int(input())
+print(2 ** N - 1)
+Hanoi(N, 1, 3, 2)
