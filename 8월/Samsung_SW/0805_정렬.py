@@ -37,17 +37,38 @@
 # 람다를 잘 몰라서 간단하게 람다 요약
 # lambda 매개변수: 표현식
 
-# # 만약 y좌표를 오름차순으로
-# # y좌표가 같다면 x좌표를 내림차순으로
+# 만약 y좌표를 오름차순으로
+# y좌표가 같다면 x좌표를 내림차순으로
 # a = [list(map(int, input().split())) for _ in range(5)]
 # a.sort(key=lambda x:(x[1], -x[0]))
 # print(a)
 
-# 10825 국영수
-T = int(input())
-for tc in range(1, T+1):
-    a, *b = input().split()
-    b = list(map(int, b))
-    b.sort(key=lambda x: (-x[0], x[1], -x[2]))
-    if b[0] == b[1] and b[1] == b[2]:
+# # 10825 국영수 4376ms
+# # 파이썬은 리스트 안에 자료형 여러개 있어도 상관 x
+# # 이 문제는 sys.stdin 안쓰면 시간초과가 날 수밖에 없음.
+# T = int(input())
+# arr = []
+# for tc in range(1, T+1):
+#     a, *b = input().split()
+#     b = list(map(int, b))
+#     arr.append((a, b))
+#
+# arr.sort(key=lambda x:(-x[1][0], x[1][1], -x[1][2], x[0]))
+# for i in range(T):
+#     print(arr[i][0])
 
+# 모범답안 508ms
+# import sys
+# input = lambda : sys.stdin.readline().rstrip()
+#
+# T = int(input())
+# arr = []
+# for tc in range(T):
+#     name, kor, math, eng = input().split()
+#     arr.append([name, int(kor), int(math), int(eng)])
+#
+# arr.sort(key=lambda x:(-x[1], x[2], -x[3], x[0]))
+# for x in arr:
+#     print(x[0])
+
+# 그 외 문제는 오늘 이론 다 흝고 풀기
