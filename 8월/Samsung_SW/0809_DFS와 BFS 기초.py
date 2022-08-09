@@ -34,8 +34,12 @@
 #
 # for x in a:
 #     print(x)
+#
+# # 2. DFS
+# # 보통 DFS와 BFS의 탐색 순서는 다르다.
+# # DFS에도 체크 배열(visited 배열)은 필요하다. 이미 방문한 곳을 중복방문하는 것을 피하기 위해서이다.
 
-# 1260 DFS와 BFS
+# 1260 DFS와 BFS 696ms
 import queue
 n, m, v = map(int, input().split())
 # 빈 그래프 리스트 만들기
@@ -48,9 +52,6 @@ for _ in range(m):
 
 for x in a:
     x.sort()
-
-chk = [False] * (n+1)
-
 # BFS 함수 구현
 def BFS(start):
     q = queue.Queue()
@@ -69,6 +70,18 @@ def BFS(start):
                 q.put(next)         # 인접 노드를 큐에 넣어준다.
     print()
 
+# DFS 함수 구현
+def DFS(now):
+    # 맨 처음 시작노드부터 chk를 True로 놓을 수 있도록.
+    chk[now] = True     # 미리 큐에 넣는 BFS와 달리 재귀적으로 다음 노드로 넘어가는 BFS라 이미 넘어간 다음 chk에 체크하는 것이 가능하다.
+    print(now, end=' ')
 
+    for next in a[now]:
+        if not chk[next]:
+            DFS(next)
 
+chk = [False] * (n+1)
+DFS(v)
+print()
+chk = [False] * (n+1)
 BFS(v)
