@@ -123,10 +123,10 @@
 
 # 15652 N과 M (4) 88ms
 # 비내림차순 => (1,4)는 되고 (4,1)은 안됨 => 중복 허용 조합
-from itertools import combinations_with_replacement as combr
-import sys
-input = lambda: sys.stdin.readline().rstrip()
-N, M = map(int, input().split())
-arr = list(combr(range(1, N+1), M))
-for a in arr:
-    print(*a)
+# from itertools import combinations_with_replacement as combr
+# import sys
+# input = lambda: sys.stdin.readline().rstrip()
+# N, M = map(int, input().split())
+# arr = list(combr(range(1, N+1), M))
+# for a in arr:
+#     print(*a)
