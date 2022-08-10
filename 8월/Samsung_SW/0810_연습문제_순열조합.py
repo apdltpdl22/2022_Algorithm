@@ -16,12 +16,12 @@
 # result = [0 for _ in range(M)]
 # permutations = []
 # DFS(0, chk, result)
+# #
+# # for p in permutations:
+# #     for m in range(M):
+# #         print(p[m], end=' ')
+# #     print()
 #
-# for p in permutations:
-#     for m in range(M):
-#         print(p[m], end=' ')
-#     print()
-
 # # 15654 N과 M(5)
 # # DFS로 수열 구현
 # import sys
@@ -62,11 +62,8 @@
 #         return
 #
 #     for i in range(begin, N):
-#         if chk[i]: continue
-#         chk[i] = True
 #         result[depth] = arr[i]
 #         DFS(i+1, depth+1, result)
-#         chk[i] = False
 #
 # import sys
 # input = lambda : sys.stdin.readline().rstrip()
@@ -74,9 +71,9 @@
 # N, M = map(int, input().split())
 # arr = list(map(int, input().split()))
 # arr.sort() # 오름차순으로 수열 만들기 위해
+#
 # # DFS(중복X조합)
 # result = [0 for _ in range(M)]
-# chk = [False for _ in range(N)]
 # combinations = []
 # DFS(0, 0, result)
 #
@@ -237,47 +234,47 @@
 #         print(c[m], end=' ')
 #     print()
 
-# 2529 부등호
-def DFS(depth, result):
-    if depth == K+1:
-        permutations.append(result)
-        return
-
-    if depth > 1:
-        if A[depth-2] == '<':
-            if not int(result[depth-2]) < int(result[depth-1]): return
-
-        elif A[depth-2] == '>':
-            if not int(result[depth-2]) > int(result[depth-1]): return
-
-    for i in range(10):
-        if chk[i] : continue
-        chk[i] = True
-        DFS(depth+1, result + str(i))
-        chk[i] = False
-
-# 입력
-import sys
-input = lambda : sys.stdin.readline().rstrip()
-K = int(input())
-A = list(input().split())
-
-# 중복 X 순열 구하기
-result = ''
-chk = [0 for _ in range(10)]
-permutations = []
-DFS(0, result)
-
-#최대값, 최소값 구하기
-max_num = 0
-min_num = 1e9
-
-for p in permutations:
-    if int(p) > int(max_num):
-        max_num = p
-
-    if int(p) < int(min_num):
-        min_num = p
-
-print(max_num)
-print(min_num)
+# # 2529 부등호
+# def DFS(depth, result):
+#     if depth == K+1:
+#         permutations.append(result)
+#         return
+#
+#     if depth > 1:
+#         if A[depth-2] == '<':
+#             if not int(result[depth-2]) < int(result[depth-1]): return
+#
+#         elif A[depth-2] == '>':
+#             if not int(result[depth-2]) > int(result[depth-1]): return
+#
+#     for i in range(10):
+#         if chk[i] : continue
+#         chk[i] = True
+#         DFS(depth+1, result + str(i))
+#         chk[i] = False
+#
+# # 입력
+# import sys
+# input = lambda : sys.stdin.readline().rstrip()
+# K = int(input())
+# A = list(input().split())
+#
+# # 중복 X 순열 구하기
+# result = ''
+# chk = [0 for _ in range(10)]
+# permutations = []
+# DFS(0, result)
+#
+# #최대값, 최소값 구하기
+# max_num = 0
+# min_num = 1e9
+#
+# for p in permutations:
+#     if int(p) > int(max_num):
+#         max_num = p
+#
+#     if int(p) < int(min_num):
+#         min_num = p
+#
+# print(max_num)
+# print(min_num)
