@@ -237,47 +237,102 @@
 #         print(c[m], end=' ')
 #     print()
 
-# 2529 부등호
-def DFS(depth, result):
-    if depth == K+1:
-        permutations.append(result)
-        return
+# # 2529 부등호 272ms
+# def DFS(depth, result):
+#     if depth > 1:
+#         if A[depth-2] == '<':
+#             if not int(result[depth-2]) < int(result[depth-1]): return
+#
+#         elif A[depth-2] == '>':
+#             if not int(result[depth-2]) > int(result[depth-1]): return
+#
+#     if depth == K+1:
+#         permutations.append(result)
+#         return
+#
+#     for i in range(10):
+#         if chk[i] : continue
+#         chk[i] = True
+#         DFS(depth+1, result + str(i))
+#         chk[i] = False
+#
+# # 입력
+# import sys
+# input = lambda : sys.stdin.readline().rstrip()
+# K = int(input())
+# A = list(input().split())
+#
+# # 중복 X 순열 구하기
+# result = ''
+# chk = [0 for _ in range(10)]
+# permutations = []
+# DFS(0, result)
+#
+# #최대값, 최소값 구하기
+# max_num = 0
+# min_num = 999999999999999
+#
+# for p in permutations:
+#     if int(p) > int(max_num):
+#         max_num = p
+#
+#     if int(p) < int(min_num):
+#         min_num = p
+#
+# print(max_num)
+# print(min_num)
 
-    if depth > 1:
-        if A[depth-2] == '<':
-            if not int(result[depth-2]) < int(result[depth-1]): return
-
-        elif A[depth-2] == '>':
-            if not int(result[depth-2]) > int(result[depth-1]): return
-
-    for i in range(10):
-        if chk[i] : continue
-        chk[i] = True
-        DFS(depth+1, result + str(i))
-        chk[i] = False
-
-# 입력
-import sys
-input = lambda : sys.stdin.readline().rstrip()
-K = int(input())
-A = list(input().split())
-
-# 중복 X 순열 구하기
-result = ''
-chk = [0 for _ in range(10)]
-permutations = []
-DFS(0, result)
-
-#최대값, 최소값 구하기
-max_num = 0
-min_num = 1e9
-
-for p in permutations:
-    if int(p) > int(max_num):
-        max_num = p
-
-    if int(p) < int(min_num):
-        min_num = p
-
-print(max_num)
-print(min_num)
+# # 14888 연산자 끼워넣기 124ms
+# def DFS(depth, result, debug_str):
+#     if depth == N-1:
+#         results.append(result)
+#         return
+#
+#     last = -5
+#
+#     for i in range(4):
+#         if last == i: continue  #같은 위치(depth)에 같은 연산자 오는 것 방지
+#         if not operators[i] > 0: continue # 연샨자 1개 이상 있어야 가능
+#         operators[i] -= 1
+#         last = i
+#
+#         if i == 0:              # + 연산자일 때
+#             DFS(depth+1, result + A[depth+1], debug_str + '+')
+#         if i == 1:              # - 연산자일 때
+#             DFS(depth+1, result - A[depth+1], debug_str + '-')
+#         if i == 2:              # * 연산자일 때
+#             DFS(depth+1, result * A[depth+1], debug_str + '*')
+#         if i == 3:              # // 연산자일 때 (정수나눗셈으로 몫만 취함)
+#             if result < 0 and A[depth+1] >= 0:
+#                 DFS(depth+1, -(-result // A[depth+1]), debug_str + '/')
+#             else:
+#                 DFS(depth+1, result // A[depth+1], debug_str + '/')
+#
+#         operators[i] += 1     #다시 돌아왔을 때 +1 상태 돌려놓음.
+#
+#
+# # 입력
+# import sys
+# input = lambda : sys.stdin.readline().rstrip()
+#
+# N = int(input())
+# A = list(map(int, input().split()))
+# operators = list(map(int, input().split()))
+#
+# # 중복 허용X 순열 (연산자의 순열)
+# result = A[0]
+# debug_str = ''
+# results = []
+# DFS(0, result, debug_str)
+#
+# min_num = 1000000001
+# max_num = -1000000001
+#
+# for r in results:
+#     if r < min_num:
+#         min_num = r
+#     if r > max_num:
+#         max_num = r
+#
+# print(max_num)
+# print(min_num)
