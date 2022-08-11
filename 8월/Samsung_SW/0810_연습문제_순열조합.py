@@ -16,12 +16,12 @@
 # result = [0 for _ in range(M)]
 # permutations = []
 # DFS(0, chk, result)
+# #
+# # for p in permutations:
+# #     for m in range(M):
+# #         print(p[m], end=' ')
+# #     print()
 #
-# for p in permutations:
-#     for m in range(M):
-#         print(p[m], end=' ')
-#     print()
-
 # # 15654 N과 M(5)
 # # DFS로 수열 구현
 # import sys
@@ -62,11 +62,8 @@
 #         return
 #
 #     for i in range(begin, N):
-#         if chk[i]: continue
-#         chk[i] = True
 #         result[depth] = arr[i]
 #         DFS(i+1, depth+1, result)
-#         chk[i] = False
 #
 # import sys
 # input = lambda : sys.stdin.readline().rstrip()
@@ -74,9 +71,9 @@
 # N, M = map(int, input().split())
 # arr = list(map(int, input().split()))
 # arr.sort() # 오름차순으로 수열 만들기 위해
+#
 # # DFS(중복X조합)
 # result = [0 for _ in range(M)]
-# chk = [False for _ in range(N)]
 # combinations = []
 # DFS(0, 0, result)
 #
@@ -237,7 +234,7 @@
 #         print(c[m], end=' ')
 #     print()
 
-# # 2529 부등호 272ms
+# # 2529 부등호
 # def DFS(depth, result):
 #     if depth > 1:
 #         if A[depth-2] == '<':
@@ -278,6 +275,61 @@
 #
 #     if int(p) < int(min_num):
 #         min_num = p
+#
+# print(max_num)
+# print(min_num)
+
+# # 14888 연산자 끼워넣기 124ms
+# def DFS(depth, result, debug_str):
+#     if depth == N-1:
+#         results.append(result)
+#         return
+#
+#     last = -5
+#
+#     for i in range(4):
+#         if last == i: continue  #같은 위치(depth)에 같은 연산자 오는 것 방지
+#         if not operators[i] > 0: continue # 연샨자 1개 이상 있어야 가능
+#         operators[i] -= 1
+#         last = i
+#
+#         if i == 0:              # + 연산자일 때
+#             DFS(depth+1, result + A[depth+1], debug_str + '+')
+#         if i == 1:              # - 연산자일 때
+#             DFS(depth+1, result - A[depth+1], debug_str + '-')
+#         if i == 2:              # * 연산자일 때
+#             DFS(depth+1, result * A[depth+1], debug_str + '*')
+#         if i == 3:              # // 연산자일 때 (정수나눗셈으로 몫만 취함)
+#             if result < 0 and A[depth+1] >= 0:
+#                 DFS(depth+1, -(-result // A[depth+1]), debug_str + '/')
+#             else:
+#                 DFS(depth+1, result // A[depth+1], debug_str + '/')
+#
+#         operators[i] += 1     #다시 돌아왔을 때 +1 상태 돌려놓음.
+#
+#
+# # 입력
+# import sys
+# input = lambda : sys.stdin.readline().rstrip()
+#
+# N = int(input())
+# A = list(map(int, input().split()))
+# operators = list(map(int, input().split()))
+#
+# # 중복 허용X 순열 (연산자의 순열)
+# result = A[0]
+# debug_str = ''
+# results = []
+# DFS(0, result, debug_str)
+#
+# min_num = 1000000001
+# max_num = -1000000001
+#
+# for r in results:
+#     if r < min_num:
+#         min_num = r
+#     if r > max_num:
+#         max_num = r
 #
 # print(max_num)
 # print(min_num)
