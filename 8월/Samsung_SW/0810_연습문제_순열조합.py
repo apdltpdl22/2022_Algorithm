@@ -334,78 +334,79 @@
 # print(max_num)
 # print(min_num)
 
-# 14889 스타트와 링크
-# 중복 없는 조합의 중복 없는 수열을 구하기.  # 시간 초과 -> 재귀 2번 말고 그냥
-def Combination(begin, depth, result):
-    if depth == N//2:
-        # result[0]에 들어가지 않은 애들을 result[1]에 넣음.
-        c = 0
-        for i in range(N):
-            if i not in result[0]:
-                result[1][c] = i
-                c += 1
-        combinations.append([tuple(result[0]), tuple(result[1])])
-        result[1] = [0 for _ in range(N//2)]
-        return
+# # 14889 스타트와 링크
+# # 중복 없는 조합의 중복 없는 수열을 구하기.  # 시간 초과 -> 재귀 2번 말고 그냥
+# def Combination(begin, depth, result):
+#     if depth == N//2:
+#         # result[0]에 들어가지 않은 애들을 result[1]에 넣음.
+#         c = 0
+#         for i in range(N):
+#             if i not in result[0]:
+#                 result[1][c] = i
+#                 c += 1
+#         combinations.append([tuple(result[0]), tuple(result[1])])
+#         result[1] = [0 for _ in range(N//2)]
+#         return
+#
+#     for d in range(begin, N):
+#         result[0][depth] = d
+#         Combination(d+1, depth+1, result)
+#
+# def Permutation_start(depth, tup, result):
+#     global sums_start
+#     if depth == 2:
+#         sums_start += arr[result[0]][result[1]]
+#         # print(result, sums_start)     # 디버깅용
+#         return
+#
+#     last = -5                   # 초기화
+#     for num in tup:
+#         if last == num: continue
+#         last = num
+#         result[depth] = num
+#         Permutation_start(depth+1, tup, result)
+#
+# def Permutation_link(depth, tup, result):
+#     global sums_link
+#     if depth == 2:
+#         sums_link += arr[result[0]][result[1]]
+#         # print(result, sums_link)     # 디버깅용
+#         return
+#
+#     last = -5                   # 초기화
+#     for num in tup:
+#         if last == num: continue
+#         last = num
+#         result[depth] = num
+#         Permutation_link(depth+1, tup, result)
+#
+# # 입력
+# import sys
+# from itertools import permutations
+# input = lambda : sys.stdin.readline().rstrip()
+#
+# N = int(input())
+# arr = [list(map(int, input().split())) for _ in range(N)]
+#
+# # 중복 X 조합( N개 중 N//2개 선택)
+# combinations = []
+# result = [[0 for _ in range(N//2)] for z in range(2)]
+# Combination(0, 0, result)
+#
+# # 중복 X 조합들
+# # 0번 튜플이 스타트, 1번 튜플이 링크라 가정할 때
+# # 각 튜플에서 2개씩 뽑는 중복 X 순열 모두 구하고 해당 순열들의 값들 총합 구함.
+# # 양 튜플의 총합을 뺀 값의 절대값을 min_num과 비교
+#
+# min_num = 10000
+# for comb in combinations:
+#     result = [0, 0]
+#     sums_start = 0
+#     sums_link = 0
+#     Permutation_start(0, comb[0], result)
+#     Permutation_link(0, comb[1], result)
+#     min_num = min(min_num, abs(sums_start - sums_link))
+#
+# print(min_num)
 
-    for d in range(begin, N):
-        result[0][depth] = d
-        Combination(d+1, depth+1, result)
-
-def Permutation_start(depth, tup, result):
-    global sums_start
-    if depth == 2:
-        sums_start += arr[result[0]][result[1]]
-        # print(result, sums_start)     # 디버깅용
-        return
-
-    last = -5                   # 초기화
-    for num in tup:
-        if last == num: continue
-        last = num
-        result[depth] = num
-        Permutation_start(depth+1, tup, result)
-
-def Permutation_link(depth, tup, result):
-    global sums_link
-    if depth == 2:
-        sums_link += arr[result[0]][result[1]]
-        # print(result, sums_link)     # 디버깅용
-        return
-
-    last = -5                   # 초기화
-    for num in tup:
-        if last == num: continue
-        last = num
-        result[depth] = num
-        Permutation_link(depth+1, tup, result)
-
-# 입력
-import sys
-from itertools import permutations
-input = lambda : sys.stdin.readline().rstrip()
-
-N = int(input())
-arr = [list(map(int, input().split())) for _ in range(N)]
-
-# 중복 X 조합( N개 중 N//2개 선택)
-combinations = []
-result = [[0 for _ in range(N//2)] for z in range(2)]
-Combination(0, 0, result)
-
-# 중복 X 조합들
-# 0번 튜플이 스타트, 1번 튜플이 링크라 가정할 때
-# 각 튜플에서 2개씩 뽑는 중복 X 순열 모두 구하고 해당 순열들의 값들 총합 구함.
-# 양 튜플의 총합을 뺀 값의 절대값을 min_num과 비교
-
-min_num = 10000
-for comb in combinations:
-    result = [0, 0]
-    sums_start = 0
-    sums_link = 0
-    Permutation_start(0, comb[0], result)
-    Permutation_link(0, comb[1], result)
-    min_num = min(min_num, abs(sums_start - sums_link))
-    # print(min_num)
-
-print(min_num)
+# 10971 외판원 순회2
