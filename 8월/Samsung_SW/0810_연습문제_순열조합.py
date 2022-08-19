@@ -410,3 +410,12 @@
 # print(min_num)
 
 # 10971 외판원 순회2
+# 입력
+import sys
+input = lambda : sys.stdin.readline().rstrip()
+N = int(input())
+arr = [list(map(int, input().split())) for _ in range(N)]
+print(arr)
+# 중복 없는 순열(4개 중 4개 고르는) * 2회
+min_sum = 1e9
+
