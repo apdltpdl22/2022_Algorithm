@@ -409,13 +409,44 @@
 #
 # print(min_num)
 
-# 10971 외판원 순회2
-# 입력
-import sys
-input = lambda : sys.stdin.readline().rstrip()
-N = int(input())
-arr = [list(map(int, input().split())) for _ in range(N)]
-print(arr)
-# 중복 없는 순열(4개 중 4개 고르는) * 2회
-min_sum = 1e9
+# # 10971 외판원 순회2 292ms
+# # 갔던 길 다시 돌아가지 않고, 끝까지 가면 다시 i번째로 바로 돌아오는 것.
+# # 즉 arr[j][i] 존재해야 함
+# def DFS(depth, now, result, visited, sum):
+#     global min_sum
+#
+#     visited[now] = 1
+#     result[depth] = now + 1
+#
+#     if depth == N - 1:
+#         visited = [0 for _ in range(N)]
+#         visited[now] = 1
+#
+#     if sum >= min_sum:
+#         return
+#
+#     if depth == N:
+#         if result[-1] == result[0]:
+#             if min_sum > sum:
+#                 min_sum = sum
+#         return
+#
+#     for next in range(N):
+#         if arr[now][next] == 0 or visited[next] != 0: continue
+#         DFS(depth+1, next, result, visited, sum+arr[now][next])
+#         visited[next] = 0
+#
+# # 입력
+# import sys
+# input = lambda : sys.stdin.readline().rstrip()
+# N = int(input())
+# arr = [list(map(int, input().split())) for _ in range(N)]
+# min_sum = 1e9
+#
+# for i in range(N):
+#     result = [0 for _ in range(N + 1)]
+#     visited = [0 for _ in range(N)]
+#     DFS(0, i, result, visited, 0)
+#
+# print(min_sum)
 
